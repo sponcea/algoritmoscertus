@@ -50,8 +50,12 @@ public class CalculadoraBasica {
 
         } else if (operacion=='/') {
             //division
-            division=num1/num2;
-            System.out.println("El resultado de la division de los números "+num1+" y "+num2+" es: "+division);
+            if (num2==0) {
+                System.out.println("No se puede dividir entre 0");
+            } else {
+                division=num1/num2;
+                System.out.println("El resultado de la division de los números "+num1+" y "+num2+" es: "+division);
+            }
         } else {
             System.out.println("La operación ingresada no es correcta");
         }
