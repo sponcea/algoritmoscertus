@@ -246,7 +246,7 @@ public class formEjemplo1 extends javax.swing.JFrame {
 
     private void btnMatrizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMatrizActionPerformed
         // TODO add your handling code here:
-        int[][] notas={{2,3,4},{9,10,11}};
+        int[][] notas={{2,3,4,5,6,1,34,55,3,232,454},{9,10,11}};
         int i=0, j=0;
         txtRespuesta.setText("Los elementos de la matriz son: \n");
         for (i=0;i<notas.length;i++) { //recorre las filas
