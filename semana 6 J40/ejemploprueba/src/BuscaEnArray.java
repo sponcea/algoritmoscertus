@@ -15,8 +15,8 @@ public class BuscaEnArray {
     
     public static int busca(int ele, int[]a) throws SecuenciaVacia {
         if (a==null){
-            throw new SecuenciaVacia("El arreglo está vacío");
-
+            //throw new SecuenciaVacia("El arreglo está vacío");
+            return -2;
         }
         for (int x = 0; x < a.length; x++) {
             if (a[x] == ele) {

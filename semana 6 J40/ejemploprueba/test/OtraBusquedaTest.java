@@ -15,9 +15,9 @@ import static org.junit.Assert.*;
  *
  * @author DIA
  */
-public class BuscaEnArrayTest {
+public class OtraBusquedaTest {
     
-    public BuscaEnArrayTest() {
+    public OtraBusquedaTest() {
     }
     
     @BeforeClass
@@ -37,84 +37,74 @@ public class BuscaEnArrayTest {
     }
 
     /**
-     * Test of busca method, of class BuscaEnArray.
-     * @throws BuscaEnArray.SecuenciaVacia
+     * Test of busca method, of class OtraBusqueda.
      */
     @Test
-    public void testBusca() throws BuscaEnArray.SecuenciaVacia {
+    public void testBusca() {
+        System.out.println("busca");
+        int ele = 0;
+        int[] a = null;
+        int expResult = -2;
+        int result = OtraBusqueda.busca(ele, a);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+    
+    @Test
+    public void testBusca2() {
         System.out.println("Buscar en array Vacío");
         int ele = 20;
         int[] a = null;
-        int expResult = -1;
-        int result = BuscaEnArray.busca(ele, a);
+        int expResult = -2;
+        int result = OtraBusqueda.busca(ele, a);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
     @Test
-    public void testBusca_2() throws BuscaEnArray.SecuenciaVacia {
-        System.out.println("Buscar elemento que no se encuentra en el arreglo");
-        int ele = 20;
-        int[] a = {4,6,1,34,54,21};
-        int expResult = -1;
-        try {
-            int result = BuscaEnArray.busca(ele, a);
-            assertEquals(expResult, result);
-        } catch (BuscaEnArray.SecuenciaVacia e){
-            
-        }
-
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-    }
-    
-    @Test
     public void testArrayVacio() {
         // Array vacío (1)
         System.out.println("Buscar elemento en arreglo vacío");
         int[] a = {};
-        try {
-            int pos = BuscaEnArray.busca(20, a);
-            assertTrue("No excepción, array vacío", false);
-        } catch (BuscaEnArray.SecuenciaVacia e) {
+            int pos = OtraBusqueda.busca(20, a);
+            assertTrue("No excepción, array vacío", pos==-1);
         // El comportamiento correcto es que se lance la excepción
         // Simplemente la cojo para que no salga fuera del método y
         // JUnit lo interprete como un error
-            System.out.println("hola!!!");
-        }
     }
     
-    @Test
-    public void testArrayUnEle() throws BuscaEnArray.SecuenciaVacia {
-        int[] a = {17};
-        int pos;
-        // elemento encontrado (2)
-        pos = BuscaEnArray.busca(17, a);
-        assertTrue("Error posición:" + pos, pos == 0);
-        // elemento no encontrado (3)
-        pos = BuscaEnArray.busca(18, a);
-        assertTrue("Error posición:" + pos, pos == -1);
-    }
-    
-    @Test
+        @Test
     public void testArrayMasDeUnEle() throws BuscaEnArray.SecuenciaVacia {
         int pos;
         // encontrado primero (4)
         int[] a1 = {17, 29, 21, 23};
-        pos = BuscaEnArray.busca(17, a1);
+        pos = OtraBusqueda.busca(17, a1);
         assertTrue("Error, en posición:" + pos, pos == 0);
         // encontrado central (5)
         int[] a2 = {17, 18, 21, 23, 29, 41, 38};
-        pos = BuscaEnArray.busca(27, a2);
+        pos = OtraBusqueda.busca(23, a2);
         assertTrue("Error, No encontrado:" + pos, pos == 3);
         // encontrado último (6)
         int[] a3 = {41, 18, 9, 31, 30, 16, 45};
-        pos = BuscaEnArray.busca(45, a3);
+        pos = OtraBusqueda.busca(45, a3);
         assertTrue("Error, en posición:" + pos, pos == 6);
         // no encontrado (7)
         int[] a4 = {21, 23, 29, 33, 38};
-        pos = BuscaEnArray.busca(25, a4);
+        pos = OtraBusqueda.busca(25, a4);
         assertTrue("Error, No encontrado:" + pos, pos == -1);
+    }
+    
+        @Test
+    public void testArrayUnEle() throws BuscaEnArray.SecuenciaVacia {
+        int[] a = {17};
+        int pos;
+        // elemento encontrado (2)
+        pos = OtraBusqueda.busca(17, a);
+        assertTrue("Error posición:" + pos, pos == 0);
+        // elemento no encontrado (3)
+        pos = OtraBusqueda.busca(18, a);
+        assertTrue("Error posición:" + pos, pos == -1);
     }
     
 }
