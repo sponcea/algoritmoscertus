@@ -5,11 +5,13 @@
  */
 package pack_clases;
 
+import java.io.Serializable;
+
 /**
  *
  * @author DIA
  */
-public class Alumno {
+public class Alumno implements Serializable {
     /*Atributos*/
     private String codigo;
     private String nombre;
